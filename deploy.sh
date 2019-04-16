@@ -1,0 +1,1 @@
+cp /root/.m2/repository/com/phdata/datastream/0.0.1/datastream-0.0.1-shaded.jar /usr/book/repository/com/phdata/datastream/0.0.1/datastream-0.0.1-shaded.jar

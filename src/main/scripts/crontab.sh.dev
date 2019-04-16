@@ -1,0 +1,9 @@
+OOZIE_HOME=/var/lib/oozie
+20 8 * * 2-6 sh /home2/app/yb-bigdata/src/main/scripts/fnma/RepeatDailyMonthlyPoolProcess.sh >> /home2/log/fnma_pool_daily.log 2>&1 &
+30 8 * * 2-6 sh /home2/app/yb-apache-hbase/src/main/scripts/gnma/RepeatDailyMonthlyLoanProcess.sh >> /home2/log/gnma_loan_daily.log 2>&1 &
+50 18 * * 2-6 sh /home2/app/yb-apache-hbase/src/main/scripts/gnma/RepeatMonthlyLoanProcess.sh >> /home2/log/gnma_loan_monthly.log 2>&1 &
+55 8  * * 2-6 sh /home2/app/yb-apache-hbase/src/main/scripts/fnma/RepeatDailyMonthlyLoanProcess.sh >> /home2/log/fnma_loan_daily.log 2>&1 &
+30 19 * * 2-6 sh /home2/app/yb-apache-hbase/src/main/scripts/fnma/RepeatMonthlyLoanProcess.sh >> /home2/log/fnma_loan_monthly.log 2>&1 &
+10 8 * * 1-5 sh /home2/app/yb-apache-hbase/src/main/scripts/fhlmc/RepeatDailyMonthlyLoanProcess.sh >> /home2/log/fhlmc_loan_daily.log 2>&1 &
+50 19 * * 1-5 sh /home2/app/yb-apache-hbase/src/main/scripts/fhlmc/RepeatMonthlyLoanProcess.sh >> /home2/log/fhlmc_loan_monthly.log 2>&1 &
+0 1 * * 1 sh /home2/app/yb-directorywatch/src/main/scripts/WatcherRestart.sh >> /home2/log/watcher.log 2>&1 & 
